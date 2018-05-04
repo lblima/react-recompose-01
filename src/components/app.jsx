@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './app.css';
 
 import Header from './header';
 import DogCard from './dog_card';
+import Spinner from './spinner';
+
+import { branch, renderComponent } from 'recompose';
 
 const App = ({breeds}) => {
     return (
@@ -24,4 +27,9 @@ const App = ({breeds}) => {
     );
 }
 
-export default App;
+const enhance = branch(
+      (props) => props.breeds.length === 0,
+      renderComponent(Spinner)
+    );
+  
+  export default enhance(App);

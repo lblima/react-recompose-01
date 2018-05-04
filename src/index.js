@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app';
-import registerServiceWorker from './registerServiceWorker';
 
 const dogs_breed = [{
         name: 'Akita',
@@ -31,7 +30,8 @@ const dogs_breed = [{
     }
 ];
 
+ReactDOM.render( < App breeds = {[]} />, document.getElementById('root'));
 
-ReactDOM.render( < App breeds = { dogs_breed } />, document.getElementById('root'));
-
-registerServiceWorker();
+setTimeout(function() {
+    ReactDOM.render( < App breeds = { dogs_breed } />, document.getElementById('root'));
+}, 2000);
