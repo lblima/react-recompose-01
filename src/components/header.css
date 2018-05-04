@@ -1,0 +1,16 @@
+.header-container {
+    padding: 1px;
+}
+
+header {
+    background: black;
+    padding: 2em;
+}
+
+header h1 {
+    color: white;
+}
+
+header img {
+    height: 2em;
+}
